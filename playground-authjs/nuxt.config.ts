@@ -1,13 +1,16 @@
 export default defineNuxtConfig({
   modules: ['../src/module.ts'],
+  app: {
+    baseURL: '/test/'
+  },
   auth: {
     provider: {
       type: 'authjs'
     },
     globalAppMiddleware: {
-      isEnabled: true
+      isEnabled: false
     },
-    baseURL: 'http://localhost:3333'
+    baseURL: 'http://localhost:3000/test/api/auth'
   },
   routeRules: {
     '/with-caching': {
